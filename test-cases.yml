@@ -1,0 +1,199 @@
+---
+- summary: |
+    Успешный поиск товара по ключевому слову
+  requirement: |
+    При вводе ключевого слова в поле поиска, должен вывести товар.
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ 
+  test-data: |
+    Samsung
+  steps:
+    - наводим указатель мыши на строку поиска
+    - Вводим "Samsung"
+  expected-result: |
+    Поиск товара завершился успешно
+
+- summary: |
+    Успешный просмотр товара и подробной информации о товаре
+  requirement: |
+    При клике по карточке товара должен появится товар и подробное описанием
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ с каталогом товаров
+  test-data: |
+    карточка товара Samsung Universe 9
+  steps:
+    - Кликаем на карточку "Samsung Universe 9"
+  expected-result: |
+    Просмотр товара с подробным описанием завершился успешно 
+
+- summary: |
+    Успешная проверка фильтрации товара по категории и цене
+  requirement: |
+    При установке фильтрации запрос должен выдать соответствующие товары
+  prerequisites: |
+    Открыта страница интернет-магазина https://hexlet-products-store.vercel.app/ с каталогом товаров
+  test-data: |
+    категория "mens-watches"
+    цена от 40 до 47
+  steps:
+    - Кликаем указателем мыши по полю "Category"
+    - Выбираем "mens-watches"
+    - В фильтре "Цена" вводим: 40 и 70
+  expected-result: |
+    Выполнена успешная фильтрация по цене и по категории товара
+
+- summary: |
+    Успешное добавления товара в корзину 
+  requirement: |
+    При нажатии на кнопку "В корзину" товар должен добавляться в корзину
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ с каталогом товаров
+  test-data: |
+    карточка товара Samsung Universe 9
+  steps:
+    - Нажимаем на кнопку "В корзину"
+  expected-result: |
+    Товар добавляется в корзину
+
+- summary: |
+    Успешный просмотр содержимого корзины
+  requirement: |
+    При нажатии на кнопку Корзины должно просматривается её содержимое
+  prerequisites: |
+    В корзине должны быть товары 
+  test-data: |
+    -
+  steps:
+    - Нажимаем на кнопку "Корзина"
+  expected-result: |
+    Просмотр содержимого корзины завершился успешно
+
+- summary: |
+    Успешное удаление содержимого корзины 
+  requirement: |
+    Содержимое корзины должно удаляться по одному клику
+  prerequisites: |
+    В корзину должны быть добавлены товары
+  test-data: |
+    Страница https://hexlet-products-store.vercel.app/cart
+  steps:
+    - Нажимаем на кнопку "Удалить"
+  expected-result: |
+    Содержимое успешно удалено
+
+- summary: |
+    Успешное оформление заказа
+  requirement: |
+    Заказ должен быть оформлен после клика по кнопке "Оформить заказ" 
+  prerequisites: |
+    открыта страница https://hexlet-products-store.vercel.app/cart и в корзине должны быть товары
+  test-data: |
+    Страница https://hexlet-products-store.vercel.app/cart
+  steps:
+    - Нажимаем на кнопку "Оформить заказ"
+  expected-result: |
+    Выдает сообщение: "Заказ успешно оформлен"
+
+- summary: |
+    Успешный переход из корзины на страницу сайта 
+  requirement: |
+    Со страницы корзины должен быть переход на основную страницу
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/cart 
+  test-data: |
+    -
+  steps:
+    - Нажимаем на кнопку "Продолжить покупки"
+  expected-result: |
+    Происходит переход на главную страницу
+
+- summary: |
+    Проверка отображения спиннера при низкой скорости интернета
+  requirement: |
+    При низкой скорости интернета при загрузке страницы должен отображаться спиннер
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ в браузере Google Chrome
+  test-data: |
+    Тестовые данные
+    -
+  steps:
+    - Открываем инструмент разработчика
+    - Во вкладке Network выбираем Slow 3G
+    - Перезагружаем страницу
+  expected-result: |
+    Появляется спиннер, который пропадает с полной загрузкой страницы
+    #аналогичная проверка для остальных популярных браузеров: Edge, Mozilla Firefox
+
+- summary: |
+    Проверка наличия мобильной версии сайта
+  requirement: |
+    Сайт должен иметь мобильную версию 
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ в браузере Google Chrome
+  test-data: |
+    Страница https://hexlet-products-store.vercel.app/
+  steps:
+    - Открываем инструмент разработчика
+    - Во вкладке Dimensions выбираем различные устройства
+  expected-result: |
+    Страница отображается на экране мобильного устройства корректно, все поля отображаются полностью
+    #аналогичная проверка для остальных популярных браузеров: Edge, Mozilla Firefox
+
+- summary: |
+    Проверка мультиязычности
+  requirement: |
+    Сайт должен переключаться на разные языки
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ на русском языке
+  test-data: |
+    Страница https://hexlet-products-store.vercel.app/
+  steps:
+    - Нажимаем на кнопку "Language"
+    - Выбираем "English"
+  expected-result: |
+    Происходит переход на английскую версию
+
+- summary: |
+    Проверка перехода на следующую и предыдущую страницу
+  requirement: |
+    Страница должна переходить по клику на следующую или предыдущую
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ 
+  test-data: |
+    Страница https://hexlet-products-store.vercel.app/
+  steps:
+    - Нажимаем на кнопку Previous
+    - Нажимаем на кнопку Next
+  expected-result: |
+    Страница прокручивается вперед и назад
+
+- summary: |
+    Проверка кроссбраузерности
+  requirement: |
+    Страница должна корректно отображаться во всех актуальных браузерах
+  prerequisites: |
+    Установлены браузеры Edge, Mozilla Firefox, Google Chrome 
+  test-data: |
+    Страница https://hexlet-products-store.vercel.app/
+  steps:
+    - Открываем браузер Edge
+    - Переходим на страницу https://hexlet-products-store.vercel.app/ 
+    - Открываем браузер Mozilla Firefox
+    - Переходим на страницу https://hexlet-products-store.vercel.app/ 
+    - Открываем браузер Google Chrome
+    - Переходим на страницу https://hexlet-products-store.vercel.app/ 
+  expected-result: |
+    Приложение корректно отображается и функционирует во всех браузерах
+
+- summary: |
+    Проверка работы скроллинга
+  requirement: |
+    Страница должна прокручиваться вниз при использовании скролла
+  prerequisites: |
+    Открыта страница https://hexlet-products-store.vercel.app/ 
+  test-data: |
+    Страница https://hexlet-products-store.vercel.app/ 
+  steps:
+    - Нажимаем на кнопку скролла и ведём указатель мыши вниз 
+  expected-result: |
+    Текст перемещается 
